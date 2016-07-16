@@ -11,12 +11,12 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 #mongo engine cursor connection
 from mongoengine import connect
-connect('polls')
+connect('polls_app')
 
 
 #Adding session for mongoengine
-SESSION_ENGINE = 'mongoengine.django.sessions'
-SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
+# SESSION_ENGINE = 'mongoengine.django.sessions'
+# SESSION_SERIALIZER = 'mongoengine.django.sessions.BSONSerializer'
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
@@ -97,3 +97,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_DIRS = (
+    'templates',
+    )

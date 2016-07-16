@@ -5,11 +5,18 @@ class Choice(Document):
     choice_text = StringField(max_length=200)
     votes = IntField(default=0)
 
+    def __unicode__(self):
+    	return self.choice_text
+
+    
+
 class Poll(Document):
     question = StringField(max_length=200)
     pub_date = DateTimeField(help_text='date published')
-    choices = ReferenceField(Choice)
+    choices = ListField(ReferenceField(Choice))
 
+    def __unicode__(self):
+    	return self.question
     
 
 
@@ -17,7 +24,7 @@ class Poll(Document):
 
 # In [2]: from datetime import datetime
 
-# In [3]: P = Poll(question="First question", pub_date=datetime.now())
+# In [3]: P = Poll(question="Firsti question", pub_date=datetime.now())
 
 # In [4]: P.save()
 # Out[4]: <Poll: Poll object>

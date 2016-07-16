@@ -1,0 +1,5 @@
+<ul>
+{% for polls in poll %}
+<li><a href="/polls/{{ polls.id }}/">{{ polls.question }}</a></li>
+{% endfor %}
+</ul>
