@@ -19,7 +19,7 @@ class Poll(Document):
     	return self.question
     
 
-
+#thats how I inserted data from shell
 # from polls.models import *
 
 # In [2]: from datetime import datetime

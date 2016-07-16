@@ -1,5 +1,7 @@
+{% load url from future %}
+
 <ul>
-{% for polls in poll %}
-<li><a href="/polls/{{ polls.id }}/">{{ polls.question }}</a></li>
+{% for pollss in poll %}
+<li><a href="{% url 'polls:detail' pollss.id %}">{{ pollss.question }}</a></li>
 {% endfor %}
 </ul>
